@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Feedback Form - Rate our service</title>
+		<link rel="stylesheet" href="css/style.css">
+		<style>
+			#contact-image {
+			display: block;
+			max-height: 250px;
+			margin: 0 auto;
+			}
+			.center {
+			text-align: center;
+			margin-top: 40px;
+			}
+			form {
+			padding-top: 50px;
+			text-align: center;
+			}
+			form p {
+			font-size: 0.8em;
+			}
+			p.error {
+			color: red;
+			animation: shake 75ms 5 ease-in alternate;
+			}
+			@keyframes shake {
+			0% {
+			margin-left: 10px;
+			}
+			100% {
+			margin-left: 0;
+			}
+			}
+			#letters-limit {
+			color: red;
+			margin-top: 40px;
+			}
+			.form-row {
+			text-align: center;
+			margin-bottom: 40px;
+			}
+			.name-row {
+			max-height: 37px;
+			}
+			.rows-left {
+			display: inline-block;
+			width: 35%;
+			text-align: right;
+			margin-right: 8px;
+			vertical-align: top;
+			margin-top: 7px;
+			}
+			.rows-right {
+			display: inline-block;
+			width: 60%;
+			text-align: left;
+			color: black;
+			}
+			.form-field {
+			box-sizing: border-box;
+			width: 100%;
+			max-width: 320px;
+			border: 1px solid #c0c0c0;
+			border-radius: 3px;
+			padding: 10px;
+			font-size: 0.8em;
+			outline: none;
+			transition-timing-function: ease;
+			transition: 0.4s;
+			}
+			.form-field:focus {
+			border: 2px solid rgb(133, 119, 151);
+			box-sizing: border-box;
+			outline: none;
+			padding: 9px;
+			}
+			.radio-select {
+			padding-top: 10px;
+			}
+			.radio-row {
+			max-height: 145px;
+			}
+			button {
+			display: block;
+			padding: 15px;
+			margin-top: 40px;
+			width: 70%;
+			background-color: rgb(55, 135, 146);
+			border: 2px solid rgb(55, 135, 146);
+			border-radius: 6px;
+			cursor: pointer;
+			font-size: 1em;
+			text-transform: uppercase;
+			color: white;
+			transition-timing-function: ease;
+			transition: 0.4s;
+			}
+			button:hover {
+			background-color: rgb(87, 170, 181);
+			}
+			.progress-container {
+			width: 100%;
+			height: 8px;
+			background: #ccc;
+			}
+			.progress-bar {
+			height: 8px;
+			background: #4caf50;
+			width: 0%;
+			}
+			.header {
+			position: fixed;
+			top: 79px;
+			z-index: 1;
+			width: 100%;
+			background-color: #f1f1f1;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div id="logo">
+				<a href="home.html"><img class="logo-img" src="images/logo.jpg" alt="logo for online gallery"></a>
+			</div>
+			<nav id="navbar">
+				<ul>
+					<li>
+						<a href="home.html">Home</a>
+					</li>
+					<li>
+						<a href="shop.html">Shop</a>
+					</li>
+					<li>
+						<a href="galleries.html">Galleries</a>
+					</li>
+					<li>
+						<a href="feedback.html">Feedback</a>
+					</li>
+					<li>
+						<a href="contact.html">Contact us</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<div class="header">
+			<div class="progress-container">
+				<div class="progress-bar" id="myBar"></div>
+			</div>
+		</div>
+		<div id="underHeader"></div>
+		<div id="pageWrapper">
+			<section class="contentContainer">
+				<div class="content">
+					<img id="contact-image" src="images/contact.jpg" alt="letter box">
+					<h1 class="center">We appreciate your feedback!</h1>
+					<p class="center">Comments from out users help us improve our services, therefore feel free to leave your thoughts and rate our website using the form below.</p>
+					<form name="feedback" action="feedback-success.html" method="post" onsubmit="return validateForm()">
+						<div class="rows-left"></div>
+						<div class="rows-right">
+							<p class="error">* - please mind, marked fields are compulsory</p>
+						</div>
+						<div class="form-row name-row">
+							<div class="rows-left">
+								<label for="name">
+								* Name:
+								</label>
+							</div>
+							<div class="rows-right" id="name-right-row">
+								<input class="form-field" type="text" id="name" name="name" placeholder="Enter your name">
+								<span id="name-error"></span>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="rows-left">
+								<label for="email">
+								E-mail:
+								</label>
+							</div>
+							<div class="rows-right">
+								<input class="form-field" type="email" id="email" name="email" placeholder="Enter your email">
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="rows-left">
+								<label for="comment">
+								Comment:
+								</label>
+								<p id="letters-limit"></p>
+							</div>
+							<div class="rows-right">
+								<textarea class="form-field" type="text" id="comment" name="comment" placeholder="Write short opinion about our website..." maxlength="150" style="height: 90px; resize: vertical; font-family: Arial;"></textarea>
+							</div>
+						</div>
+						<div class="form-row radio-row">
+							<div class="rows-left">
+								<label for="rating">
+								* How do you rate our website:
+								</label>
+							</div>
+							<div class="rows-right" id="radio-right-row">
+								<div class="radio-select">
+									<input type="radio" id="excellent" name="rating" value="excellent">
+									<label for="excellent">Excellent</label>
+								</div>
+								<div class="radio-select">
+									<input type="radio" id="good" name="rating" value="good">
+									<label for="good">Good</label>
+								</div>
+								<div class="radio-select">
+									<input type="radio" id="average" name="rating" value="average">
+									<label for="average">Average</label>
+								</div>
+								<div class="radio-select">
+									<input type="radio" id="poor" name="rating" value="poor">
+									<label for="poor">Poor</label>
+								</div>
+								<div class="radio-select">
+									<input type="radio" id="very-poor" name="rating" value="very poor">
+									<label for="very-poor">Very Poor</label>
+								</div>
+								<span id="radio-error"></span>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="rows-left">
+							</div>
+							<div class="rows-right">
+								<button id="submit" type="submit">Submit</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</section>
+		</div>
+		<footer>
+			<font size='5' style="padding-top: 20px">
+				<p style="padding: 0px 30px; text-align: center;"> 
+					<a href = "https://mail.google.com/mail/u/2/#inbox" target="blank" style="padding-left: 20px;"> <span style="font-size: 20px;">&#9993;</span> 19BCE076@nirmauni.ac.in </a>
+				</p>
+				<p style="padding: 0px 30px; text-align: center;">
+					&#169; &nbsp;Copyright 2013 ArtGallery - All Rights Reserved. Privacy Policy | Site Terms & Disclosures.Hosted by Dhara Harsora
+				</p>
+			</font>
+		</footer>
+		<script>
+			var radioArray = document.getElementsByName("rating");
+			function validateForm() {
+			  const errorAlert = "Form submission unsuccessful!\nSee errors below.";
+			  var radioSelectedValue = "";
+			
+			  var nameValue = document.getElementById("name").value;
+			  var commentValue = document.getElementById("comment").value;
+			  for (let i=0; i<radioArray.length; i++) {
+				if (radioArray[i].checked) {
+				  radioSelectedValue = radioArray[i].value;
+				}
+			  }
+			  console.log("Name");
+			  console.log(nameValue, commentValue, radioSelectedValue);
+			  // Check required fields
+			  regx=/^[A-Za-z]+$/;
+			  if(!regx.test(nameValue)){
+				alert(errorAlert);
+				document.getElementById("name-error").innerHTML = nameError;
+				return false;
+			  }
+			  if (nameValue == "") {
+				alert(errorAlert);
+				document.getElementById("name-error").innerHTML = nameError;
+				return false;
+			  } else if (radioSelectedValue == "") {
+				alert(errorAlert);
+				document.getElementById("radio-error").innerHTML = radioError;
+				return false;
+			  } else {
+				// Popup window with the summary
+				return confirm("Dear " + nameValue + ",\nThank you very much for your feedback. You have rated our site as '" + radioSelectedValue + "' and your comment is ''" + commentValue + "''.\n\n By clicking 'OK' you confirm sending following feedback to us.");
+			  }
+			}
+			// Variables for inline error message
+			var nameError = "<p class=\"error\">Field Name has to be filled out! contains only letter</p>";
+			var radioError = "<p class=\"error\">Rating option has to be chosen!</p>";
+			
+			document.getElementById("name").addEventListener("input", function(){
+			  if (this.value == "") {
+				document.getElementById("name-error").innerHTML = nameError;
+			  } else {
+				document.getElementById("name-error").innerHTML = "";
+			  }
+			});
+			
+			for (let i=0; i<radioArray.length; i++) {
+			  radioArray[i].addEventListener("change", function(){
+				if (radioArray[i].checked) {
+				  document.getElementById("radio-error").innerHTML = ""
+				}
+			  })
+			}
+			
+			document.getElementById("comment").addEventListener("input", function(){
+			  var currentInput = this.value;
+			  var charLeft = 150;
+			  document.getElementById("letters-limit").innerHTML = charLeft - currentInput.length - 1;
+			})
+			// When the user scrolls the page, execute myFunction
+			window.onscroll = function() {myFunction()};
+			
+			function myFunction() {
+			var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+			var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+			var scrolled = (winScroll / height) * 100;
+			document.getElementById("myBar").style.width = scrolled + "%";
+			}
+			
+		</script>
+	</body>
+</html>
