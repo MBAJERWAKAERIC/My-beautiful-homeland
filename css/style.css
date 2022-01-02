@@ -1,0 +1,198 @@
+/* GENERAL STYLES */
+
+body {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
+	color: rgb(36, 36, 36);
+	background-color: rgb(233, 233, 233);
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: 'Playfair Display', serif;
+}
+
+/*Home pg img ke liye*/
+#homeImgContainer {
+	/*An element with position: fixed; is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled*/
+	position: fixed;
+	margin: 0;
+	padding: 0;
+	top: 79px;
+	left: 0;
+	background: url("../images/cala_mitjana.jpg");
+	height: 365px;
+	width: 100%;
+	opacity: 0.80;
+	/*Resize the background image to cover the entire container, even if it has to stretch the image or cut a little bit off one of the edges*/
+	background-size: cover;
+	/*z-index only works on positioned elements (position: absolute, position: relative, position: fixed, or position: sticky) and flex items (elements that are direct children of display:flex elements).*/
+	z-index: -1;
+}
+
+
+/* Navigation barr*/
+header {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	background-color: rgb(51, 51, 51);
+	color: rgb(224, 224, 224);
+	height: 79px;
+	position: fixed;
+}
+#logo {
+	max-height: 80px;
+	max-width: 80px;
+}
+.logo-img {
+	height: 100%;
+}
+#navbar ul {
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+#navbar a {
+	line-height: 5em;
+	padding: 30px;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: rgb(224, 224, 224);
+}
+#navbar a:hover {
+	background-color: rgb(32, 32, 32);
+	color: rgb(255, 255, 255);
+}
+
+
+/* Home page image */
+#underHeader {
+	width: 100%;
+	height: 79px;
+}
+
+#introduction {
+	text-align: center;
+	height: 180px;
+	padding-top: 260px;
+	font-family: 'Big Shoulders Text', cursive;
+	color: rgb(44, 44, 44);
+	text-shadow: 2px 1px 4px #ffffff;
+}
+
+#introduction h1 {
+	font-family: 'Big Shoulders Text', cursive;
+	font-size: 2em;
+	letter-spacing: .15em;
+}
+
+#introduction p {
+	font-size: 1.5em;
+}
+
+
+/* Main content */
+#pageWrapper {
+	margin: 0;
+	padding: 0;
+	background-color: rgb(233, 233, 233);
+	padding-top: 20px;
+}
+.contentContainer {
+	background-color: rgb(240, 240, 240);
+	border-radius: 7px;
+	border: 1px solid #cccccc;
+	max-width: 1024px;
+	margin: 0px auto 20px auto;
+	padding: 0 10px;
+}
+.content {
+	max-width: 768px;
+	margin: 50px auto;
+}
+
+
+/* Footer */
+footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 25px;
+	width: 100%;
+	background-color: rgb(19, 19, 19);
+	color: rgb(255, 255, 255);
+	height: 200px;
+}
+footer p {
+	font-size: 0.9em;
+}
+#footer ul {
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+#footer a {
+	line-height: 5em;
+	padding: 30px;
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: all 0.3s ease-out;
+}
+#footer a:hover {
+	color: rgb(141, 141, 141);
+}
+
+.title {
+	text-align: center;
+	font-size: 30px;
+	font-style: oblique;
+}
+.creators {
+	text-align: center;
+	font-size: 30px;
+	background-color: rgb(240, 240, 240);
+	max-width: 1024px;
+	font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
+}
+.body_pres_page {
+	box-sizing: border-box;
+	margin: 50;
+	padding: 0;
+	font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
+	color: rgb(36, 36, 36);
+	text-align: center;
+	font-size: 20px;
+}
+.examples {
+	background: #FFF;
+	width: 800px;
+	font-size: 80%;
+	border: 1px #000 solid;
+	margin: 3.5em auto 2em;
+	padding: 1em 2em 2em
+}
+.column {
+	float: left;
+	width: 45%;
+	padding: 20px
+}
+.box {
+	-moz-border-radius: 5px;
+	background-color: #DDD;
+	border: 1px solid #000;
+	clear: both;
+	width: 50%;
+	margin: 10px auto;
+	padding: 10px
+}
