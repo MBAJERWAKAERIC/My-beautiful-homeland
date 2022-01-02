@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>RDC mon pay</title>
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<link rel="stylesheet" href="css/style.css">
+		<script type="text/javascript" src="js/gallary.js"></script>
+		<script src="js/store.js"></script>
+		<style>
+			.font-size-bar {
+			text-align: center;
+			}
+			.subscribe_now_part{
+			padding-left: 25px 0;
+			background: #eee;
+			}
+			.subscribe_inner_part{
+			max-width: 350px;
+			margin: 0px auto;
+			text-align: center;
+			}
+			.subscribe_inner_part[type="text"]{
+			width: 250px;
+			border: 1px solid #666;
+			padding: 5px;
+			height: 30px;
+			outline: 0;
+			font-size: 12px;
+			background: none;
+			display: inline-block;
+			vertical-align: middle;
+			}
+			.sub_footer_services{
+			background-color: #433f3f;
+			}
+			.container_fluid{
+			padding-right: 15px;
+			padding-left: 15px;
+			margin-right: auto;
+			margin-left: auto;
+			}
+		</style>
+		<script>
+			var size;
+			function incfont()
+			{
+				var t = document.getElementById('fontsize').value;
+				var x = document.getElementById('text');
+				x.style.fontSize = t+"px";
+				size =t;
+				document.getElementById('size').innerHTML = size;
+			}
+		</script>
+	</head>
+	<style>
+		.progress-container {
+		width: 100%;
+		height: 4px;
+		background: #ccc;
+		}
+		.progress-bar {
+		height: 4px;
+		background: #4caf50;
+		width: 0%;
+		}
+		.header {
+		position: fixed;
+		top: 79px;
+		z-index: 1;
+		width: 100%;
+		background-color: #f1f1f1;
+		}
+	</style>
+	<body ng-app="myApp">
+		<a name="tp"></a>
+		<header>
+			<div id="logo">
+				<a href="home.html"><img class="logo-img" src="images/logo.jpg" alt="logo for online gallery"></a>
+			</div>
+			<div  ng-controller="myCtrl">
+				<nav id="navbar">
+					<ul>
+						<li>
+							<a href="home.html">{{f | uppercase}}</a>
+						</li>
+						<li>
+							<a href="shop.html">{{s | uppercase}}</a>
+						</li>
+						<li>
+							<a href="galleries.html">{{t | uppercase}}</a>
+						</li>
+						<li>
+							<a href="feedback.html">{{fo | uppercase}}</a>
+						</li>
+						<li>
+							<a href="contact.html">{{fi | uppercase}}</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div id="homeImgContainer"></div>
+		<div class="header">
+			<div class="progress-container">
+				<div class="progress-bar" id="myBar"></div>
+			</div>
+		</div>
+		<section id=introduction>
+			<h1>GOMA MY HOMELAND</h1>
+			<p>La RDC, le plus bon de tout les pays</p>
+		</section>
+		<div id="pageWrapper">
+			<!-- <div class="font-size-bar"><input type="range" onclick="incfont();" id="fontsize" min="20" max="40" value="20" style="width:30%" />
+				<label style="display:block;">Font Size: <span id="size">20</span></label><br>
+			</div> -->
+			<span id="text">
+				<section class="contentContainer">
+					<div class="content">
+						<h1>Art Gallery</h1>
+						<p>
+							"With your continued support and art patronage we hope to make available handpicked Indian talent from across the country exclusively for you. With a fresh rebranded look, our gallery's vision is to encourage young Indian artists as well as to ensure that you as a collector get the best of Indian Art to enjoy in your personal spaces."
+						</p>
+						<p>
+							the one-stop destination for all the art lovers. Art has always been an integral part of society, not today but since the time humans had started civilizing. Not just the photographic presentation of the shapes around, art also tends to depict and share the complete experience of the moment enveloped in those photographs. Love, passion, and admiration of art stem up the basis of artgallary.com. Various kinds of art forms have existed and still exist in this world, each of which has a unique story and technique involved with it. Each artist associates himself with a certain school of imagination. With 1000+ artists and over 16,000 artworks on display. Diversity, multifariousness and variegation best describe the myriad range of artworks which art gallary has. Be it Ancient Indian heritage art forms or the abstract art or the contemporary or the modern art and whatnot. Also, not restricting itself to only paintings artgallary.com envelopes a large array of Sculptures and Wall Murals as well. With the wide range of artists and artforms, artgallary.com is the one-stop solution for all the artists and art lovers.
+						</p>
+					</div>
+				</section>
+		</div>
+		</span>
+		<footer>
+			<font size='4'>
+				<p style="padding: 0px 20px; text-align: center;">
+					<a href = "#tp" style="color: white"> Back to top </a>
+				</p>
+				<p style="padding: 0px 30px; text-align: center;"> 
+					<a href = "https://mail.google.com/mail/u/2/#inbox" target="blank" style="padding-left: 20px;"> <span style="font-size: 20px;">&#9993;</span> 19BCE076@nirmauni.ac.in </a>
+				</p>
+				<p style="padding: 0px 30px; text-align: center;">
+					&#169; &nbsp;Copyright 2013 ArtGallery - All Rights Reserved. Privacy Policy | Site Terms & Disclosures.Hosted by Dhara Harsora
+				</p>
+			</font>
+		</footer>
+		<script>
+			// Wheneveer the user scrolls the page, execute
+			window.onscroll = function() {myFunction()};
+			
+			function myFunction() {
+				// documentElement return all html element
+				var winScroll = document.documentElement.scrollTop;
+				// console.log(winScroll);
+				// (whole pg - window/viewable)sz;
+				var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+				// console.log(" " + height);
+				var tt = (winScroll / height) * 100;
+				document.getElementById("myBar").style.width = tt + "%";
+			}
+		</script>
+	</body>
+</html>
