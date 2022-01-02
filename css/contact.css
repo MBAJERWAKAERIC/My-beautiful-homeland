@@ -1,0 +1,101 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	font-family: "Ubuntu", sans-serif;
+}
+
+* {
+	font-family: "Ubuntu", sans-serif;
+}
+
+nav {
+	width: 100%;
+	height: 100px;
+	background: #000;
+}
+
+.navbar-brand {
+	font-family: "Fredoka One", cursive;
+}
+
+header {
+	height: 350px;
+	width: 100%;
+	background-size: cover;
+	text-align: center;
+	color: #f2f2f2;
+	font-size: 60px;
+}
+
+header h2 {
+	font-size: 45px;
+	padding-top: 10%;
+}
+
+.form-group {
+	padding-top: 2px;
+}
+
+.register-form {
+	display: grid;
+	grid-template-rows: 1fr;
+}
+
+input {
+	height: 50px;
+}
+
+textarea {
+	height: 100px;
+}
+
+#sec-s {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding-left: 8%;
+	padding-right: 8%;
+	padding-top: 5%;
+	grid-gap: 4.5em;
+}
+
+.bd {
+	content: "";
+	width: 100px;
+	display: block;
+	border-top: 1px solid #121212;
+}
+
+.cons h2 {
+	font-size: 23px;
+}
+
+.cons h4 {
+	font-size: 18px;
+}
+
+.cons p {
+	line-height: 1.4em;
+	margin-top: 20px;
+	color: #666;
+}
+
+.cons p a {
+	text-decoration: none;
+	color: #000;
+}
+
+.wrap {
+	margin-top: 28px;
+}
+
+.wrap p {
+	line-height: 0.8em;
+}
+
+#sec-t {
+	padding-left: 8%;
+	padding-right: 8%;
+	padding-top: 5%;
+}
