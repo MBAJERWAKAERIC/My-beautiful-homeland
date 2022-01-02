@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Painting - Gallery</title>
+		<link rel="stylesheet" href="css/style.css">
+		<style>
+			.content {
+			text-align: center;
+			}
+			p {
+			font-size: 1.2em;
+			}
+			#gallery {
+			display: grid;
+			max-width: 100%;
+			grid-gap: 10px;
+			grid-row-gap: 30px;
+			}
+			.thumbnails {
+			grid-template-columns: repeat(3, 1fr);
+			}
+			.large-gallery {
+			grid-template-columns: repeat(1, 1fr);
+			}
+			img {
+			width: 100%;
+			height: 75%;
+			object-fit:cover;
+			}
+			.button {
+			padding: 10px;
+			margin-bottom: 40px;
+			background-color: rgb(55, 135, 146);
+			border: 2px solid rgb(55, 135, 146);
+			border-radius: 6px;
+			cursor: pointer;
+			font-size: 0.8em;
+			text-transform: uppercase;
+			color: white;
+			}
+			.button:hover {
+			background-color: rgb(87, 170, 181);
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div id="logo">
+				<a href="home.html"><img class="logo-img" src="images/logo.jpg" alt="logo for online gallery"></a>
+			</div>
+			<nav id="navbar">
+				<ul>
+					<li>
+						<a href="home.html">Home</a>
+					</li>
+					<li>
+						<a href="shop.html">Shop</a>
+					</li>
+					<li>
+						<a href="galleries.html">Galleries</a>
+					</li>
+					<li>
+						<a href="feedback.html">Feedback</a>
+					</li>
+					<li>
+						<a href="contact.html">Contact us</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<div id="underHeader"></div>
+		<div id="pageWrapper">
+			<section class="contentContainer">
+				<div class="content">
+					<div>
+						<h1>Photo Gallery from Piotr</h1>
+						<p>Many of those pictures are available to buy as photo prints and canvas.<br> To find out more visit our <a href="#">Shop</a>.</p>
+					</div>
+					<div>
+						<h2>Choose gallery view: </h2>
+						<input type="button" value="Thumbnails" id="thumbnails-button" class="button">
+						<input type="button" value="Large" id="large-gallery-button" class="button">
+					</div>
+					<hr>
+					<div id="gallery" class="thumbnails">
+						<div class="grid-item">
+							<p>£19.0</p>
+							<img src="images/paiting/1.jfif">
+						</div>
+						<div class="grid-item">
+							<p>£129.3</p>
+							<img src="images/paiting/2.jpg">
+						</div>
+						<div class="grid-item">
+							<p>£300.0</p>
+							<img src="images/paiting/lacasadepapel.jpg">
+						</div>
+						<div class="grid-item">
+							<p>£9.0</p>
+							<img src="images/paiting/photo-1541961017774-22349e4a1262.jfif">
+						</div>
+						<div class="grid-item">
+							<p>£19.0</p>
+							<img src="images/paiting/photo-1571115764595-644a1f56a55c.jfif">
+						</div>
+						<div class="grid-item">
+							<p>£19.6</p>
+							<img src="images/paiting/photo-1579965342575-16428a7c8881.jfif">
+						</div>
+						<div class="grid-item">
+							<p>£19.3</p>
+							<img src="images/paiting/watercolour-paintings-500x500.png">
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<footer>
+			<font size='5' style="padding-top: 20px">
+				<p style="padding: 0px 30px; text-align: center;"> 
+					<a href = "https://mail.google.com/mail/u/2/#inbox" target="blank" style="padding-left: 20px;"> <span style="font-size: 20px;">&#9993;</span> 19BCE076@nirmauni.ac.in </a>
+				</p>
+				<p style="padding: 0px 30px; text-align: center;">
+					&#169; &nbsp;Copyright 2013 ArtGallery - All Rights Reserved. Privacy Policy | Site Terms & Disclosures.Hosted by Dhara Harsora
+				</p>
+			</font>
+		</footer>
+		<script>
+			document.getElementById("large-gallery-button").addEventListener("click", function(){
+			  document.getElementById("gallery").className = "large-gallery";
+			})
+			document.getElementById("thumbnails-button").addEventListener("click", function(){
+			  document.getElementById("gallery").className = "thumbnails";
+			})
+		</script>
+	</body>
+</html>
